@@ -49,7 +49,7 @@
 .header__social-icon {
     width: 20px;
     height: 20px;
-    animation: header__pulse 2s infinite;
+    
 }
 
 @keyframes header__pulse {
