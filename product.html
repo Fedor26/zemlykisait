@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Товар — ЗЕМЛЯКИ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page page--product">
+    <header class="header">
+        <div class="header__top">
+            <div class="header__content">
+                <div class="header__socials">
+                    <a href="https://t.me/your_telegram" target="_blank" class="header__social-link">
+                        <img src="png/telegram.png" alt="Telegram" class="header__social-icon">
+                    </a>
+                    <a href="https://www.tiktok.com/@your_tiktok" target="_blank" class="header__social-link">
+                        <img src="png/icons8-tiktok-500.png" alt="TikTok" class="header__social-icon">
+                    </a>
+                </div>
+                <img src="png/logo.png" alt="Логотип ЗЕМЛЯКИ" class="header__logo">
+                <div class="header__dropdown">
+                    <button class="header__dropdown-toggle">
+                        <img src="png/menu-icon.png" alt="Меню" class="header__dropdown-icon">
+                    </button>
+                    <div class="header__dropdown-menu">
+                        <a href="index.html#about" class="header__dropdown-link">О нас</a>
+                        <a href="index.html#catalog" class="header__dropdown-link">Всё товары</a>
+                        <a href="index.html#reviews" class="header__dropdown-link">Отзывы</a>
+                        <a href="cart.html" class="header__dropdown-link">Корзина (<span class="header__cart-count">0</span>)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1 class="header__title">ЗЕМЛЯКИ</h1>
+        <p class="header__subtitle">Одежда, рожденная в сердце русского села</p>
+    </header>
+
+    <section class="product-detail">
+        <h2 class="product-detail__title"></h2>
+        <div class="product-detail__content">
+            <img class="product-detail__image" src="" alt="">
+            <div class="product-detail__info">
+                <p class="product-detail__description"></p>
+                <p class="product-detail__price"></p>
+                <label class="product-detail__label">Размер:</label>
+                <select class="product-detail__select" name="size">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+                <button class="product-detail__button">Добавить в корзину</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal modal--hidden">
+        <span class="modal__close">×</span>
+        <img class="modal__image" src="" alt="Увеличенное изображение">
+    </div>
+
+    <footer class="footer">
+        <p class="footer__text">ЗЕМЛЯКИ — вдохновение полей и русской души</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

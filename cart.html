@@ -1,56 +1,16 @@
-<script type="text/javascript">
-        var gk_isXlsx = false;
-        var gk_xlsxFileLookup = {};
-        var gk_fileData = {};
-        function filledCell(cell) {
-          return cell !== '' && cell != null;
-        }
-        function loadFileData(filename) {
-        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
-            try {
-                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
-                var firstSheetName = workbook.SheetNames[0];
-                var worksheet = workbook.Sheets[firstSheetName];
-
-                // Convert sheet to JSON to filter blank rows
-                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                // Filter out blank rows (rows where all cells are empty, null, or undefined)
-                var filteredData = jsonData.filter(row => row.some(filledCell));
-
-                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
-                var headerRowIndex = filteredData.findIndex((row, index) =>
-                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
-                );
-                // Fallback
-                if (headerRowIndex === -1 || headerRowIndex > 25) {
-                  headerRowIndex = 0;
-                }
-
-                // Convert filtered JSON back to CSV
-                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
-                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
-                return csv;
-            } catch (e) {
-                console.error(e);
-                return "";
-            }
-        }
-        return gk_fileData[filename] || "";
-        }
-        </script><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Корзина — ЗЕМЛЯКИ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="page page--cart">
     <header class="header">
         <div class="header__top">
             <div class="header__content">
-                <img src="png/logo.png" alt="Логотип ЗЕМЛЯКИ" class="header__logo">
                 <div class="header__socials">
                     <a href="https://t.me/your_telegram" target="_blank" class="header__social-link">
                         <img src="png/telegram.png" alt="Telegram" class="header__social-icon">
@@ -59,16 +19,22 @@
                         <img src="png/icons8-tiktok-500.png" alt="TikTok" class="header__social-icon">
                     </a>
                 </div>
+                <img src="png/logo.png" alt="Логотип ЗЕМЛЯКИ" class="header__logo">
+                <div class="header__dropdown">
+                    <button class="header__dropdown-toggle">
+                        <img src="png/menu-icon.png" alt="Меню" class="header__dropdown-icon">
+                    </button>
+                    <div class="header__dropdown-menu">
+                        <a href="index.html#about" class="header__dropdown-link">О нас</a>
+                        <a href="index.html#catalog" class="header__dropdown-link">Всё товары</a>
+                        <a href="index.html#reviews" class="header__dropdown-link">Отзывы</a>
+                        <a href="cart.html" class="header__dropdown-link header__dropdown-link--active">Корзина (<span class="header__cart-count">0</span>)</a>
+                    </div>
+                </div>
             </div>
         </div>
         <h1 class="header__title">ЗЕМЛЯКИ</h1>
         <p class="header__subtitle">Одежда, рожденная в сердце русского села</p>
-        <nav class="header__nav">
-            <a href="index.html#about" class="header__nav-link">О нас</a>
-            <a href="index.html#catalog" class="header__nav-link">Всё товары</a>
-            <a href="index.html#reviews" class="header__nav-link">Отзывы</a>
-            <a href="cart.html" class="header__nav-link header__nav-link--active">Корзина (<span class="header__cart-count">0</span>)</a>
-        </nav>
     </header>
 
     <section id="cart" class="cart">
@@ -108,7 +74,6 @@
     </div>
 
     <footer class="footer">
-    
         <p class="footer__text">ЗЕМЛЯКИ — вдохновение полей и русской души</p>
     </footer>
 

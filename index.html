@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ЗЕМЛЯКИ — Одежда из сердца русского села</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="page page--main">
     <header class="header">
         <div class="header__top">
             <div class="header__content">
-                <img src="png/logo.png" alt="Логотип ЗЕМЛЯКИ" class="header__logo">
                 <div class="header__socials">
                     <a href="https://t.me/your_telegram" target="_blank" class="header__social-link">
                         <img src="png/telegram.png" alt="Telegram" class="header__social-icon">
@@ -20,16 +19,22 @@
                         <img src="png/icons8-tiktok-500.png" alt="TikTok" class="header__social-icon">
                     </a>
                 </div>
+                <img src="png/logo.png" alt="Логотип ЗЕМЛЯКИ" class="header__logo">
+                <div class="header__dropdown">
+                    <button class="header__dropdown-toggle">
+                        <img src="png/menu-icon.png" alt="Меню" class="header__dropdown-icon">
+                    </button>
+                    <div class="header__dropdown-menu">
+                        <a href="#about" class="header__dropdown-link">О нас</a>
+                        <a href="#catalog" class="header__dropdown-link">Всё товары</a>
+                        <a href="#reviews" class="header__dropdown-link">Отзывы</a>
+                        <a href="cart.html" class="header__dropdown-link">Корзина (<span class="header__cart-count">0</span>)</a>
+                    </div>
+                </div>
             </div>
         </div>
         <h1 class="header__title">ЗЕМЛЯКИ</h1>
         <p class="header__subtitle">Одежда, рожденная в сердце русского села</p>
-        <nav class="header__nav">
-            <a href="#about" class="header__nav-link">О нас</a>
-            <a href="#catalog" class="header__nav-link">Всё товары</a>
-            <a href="#reviews" class="header__nav-link">Отзывы</a>
-            <a href="cart.html" class="header__nav-link">Корзина (<span class="header__cart-count">0</span>)</a>
-        </nav>
     </header>
 
     <section id="about" class="about">
@@ -66,7 +71,6 @@
     </div>
 
     <footer class="footer">
-        
         <p class="footer__text">ЗЕМЛЯКИ — вдохновение полей и русской души</p>
     </footer>
 
