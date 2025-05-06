@@ -52,12 +52,18 @@
 }
 
 .header__social-icon {
+<<<<<<< HEAD
     width: 24px;
     height: 24px;
     max-width: 24px;
     max-height: 24px;
     object-fit: contain;
     display: block;
+=======
+    width: 20px;
+    height: 20px;
+    
+>>>>>>> e514589da7ee0b85a6b5bde2378c472703b55c11
 }
 
 @keyframes header__pulse {
@@ -960,4 +966,13 @@
         padding: 80px 20px 20px;
         font-size: 1.1em;
     }
+<<<<<<< HEAD
 }
+=======
+
+    .footer__combine {
+        width: 150px;
+        top: 10px;
+    }
+}
+>>>>>>> e514589da7ee0b85a6b5bde2378c472703b55c11
